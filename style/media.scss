@@ -1,0 +1,13 @@
+@media screen and (max-width:1100px) {
+
+    // Header
+    .nav__left {
+     display: none;
+    }
+    .nav__right {
+        display: none;
+    }
+    .header__burger {
+        display: flex;
+    }
+}
