@@ -11,3 +11,10 @@
         display: flex;
     }
 }
+@media screen and (max-width:600px){
+    // header
+    .header {
+        margin-top: 19px;
+        padding: 0 20px;
+    }
+}

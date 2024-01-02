@@ -8,4 +8,10 @@
   .header__burger {
     display: flex;
   }
+}
+@media screen and (max-width: 600px) {
+  .header {
+    margin-top: 19px;
+    padding: 0 20px;
+  }
 }/*# sourceMappingURL=media.css.map */
