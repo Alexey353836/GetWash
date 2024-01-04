@@ -1,6 +1,9 @@
 @media screen and (max-width:1100px) {
 
     // Header
+    .header {
+        margin-top: 19px;
+    }
     .nav__left {
      display: none;
     }
@@ -14,7 +17,6 @@
 @media screen and (max-width:600px){
     // header
     .header {
-        margin-top: 19px;
         padding: 0 20px;
     }
 }
