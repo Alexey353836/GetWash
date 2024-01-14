@@ -1,3 +1,10 @@
+@media screen and (max-width: 1200px) {
+       // Baner
+       .baner__h1 {
+        margin-top: 50px;
+    }
+}
+
 @media screen and (max-width:1100px) {
 
     // Header
@@ -14,9 +21,75 @@
         display: flex;
     }
 }
+@media screen and (max-width:1000px){
+    @mixin containerMain-2{
+        max-width: 700px;
+    }
+    // Baner
+    .baner {
+        @include containerMain-2;
+        flex-direction: column;
+        align-items: center;
+    }
+    .baner__h1 {
+        text-align: center;
+        max-width: 100%;
+    }
+    .baner__img-arrow {
+        display: none;
+    }
+    .baner__img-arrow-2{
+        display: block;
+    }
+    .baner_text {
+        text-align: center;
+        max-width: 100%;
+    }
+    .baner__button {
+       display: flex;
+       justify-content: center;
+    }
+    .baner__box-2 {
+        position: relative;
+        transform: translateX(0px);
+    }
+    .baner__img {
+        display: none;
+    }
+    .baner__img-2{
+        display: block;
+    }
+}
 @media screen and (max-width:600px){
+    @mixin containerMain{
+        max-width: 1230px;
+        width:100%;
+        margin: 0 auto;
+        padding: 0 10px;
+    }
     // header
     .header {
         padding: 0 20px;
+    }
+
+    // Baner
+    .baner__h1 {
+        font-size: 25px;
+        line-height: 35px;
+    
+        margin-top: 55px;
+    }
+    .baner__img-arrow-2{
+        height: 20px;
+    }
+    .baner_text {
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .baner__button {
+        margin-top: 40px;
+    }
+    .baner__img-2{
+        margin-top: 40px;
     }
 }

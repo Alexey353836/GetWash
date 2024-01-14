@@ -184,11 +184,16 @@ body {
 
 .baner {
   display: flex;
+  flex-direction: row;
   position: relative;
   max-width: 1230px;
   width: 100%;
   margin: 0 auto;
   padding: 0 30px;
+}
+
+.baner__box-1 {
+  z-index: 1;
 }
 
 .baner__h1 {
@@ -198,6 +203,8 @@ body {
   line-height: 50px;
   margin-top: 180px;
   max-width: 580px;
+  background-color: rgba(240, 248, 255, 0.438);
+  border-radius: 10px;
 }
 
 .baner__img-arrow {
@@ -206,17 +213,25 @@ body {
   margin-left: 10px;
 }
 
+.baner__img-arrow-2 {
+  display: none;
+  height: 30px;
+  margin: 19px auto 0;
+}
+
 .baner_text {
-  color: #72727E;
+  color: #141B41;
   font-size: 24px;
-  font-weight: 350;
+  font-weight: 300;
   line-height: 33.6px;
   max-width: 528px;
   margin-top: 19px;
+  background-color: rgba(240, 248, 255, 0.438);
+  border-radius: 10px;
 }
 
 .baner__button {
-  margin-top: 47px;
+  margin-top: 50px;
 }
 
 .button {
@@ -240,9 +255,15 @@ body {
   position: absolute;
   top: 0;
   right: 0px;
-  transform: translateX(110px);
+  transform: translateX(100px);
   background: url("../img/photo/Transaction History 10.png");
   background-repeat: no-repeat;
   background-size: contain;
   max-width: 1040px;
+}
+
+.baner__img-2 {
+  display: none;
+  width: 100%;
+  margin-top: 50px;
 }/*# sourceMappingURL=style.css.map */
