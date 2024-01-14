@@ -72,6 +72,7 @@ $color141-b-41: #141B41;
     transition: 0.2s;
     opacity: 0;
     visibility: hidden;
+    z-index: 2;
 }
 .burger__content {
     max-width: 320px;
