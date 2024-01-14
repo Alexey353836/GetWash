@@ -30,12 +30,25 @@ $colorBlueHover:  #244ac6;
 $colorNavyBlue:#141B41;
 $colorRed: rgb(193, 32, 69);
 $colorGrey: #72727E;
+$color141-b-41: #141B41;
 @mixin containerMain{
     max-width: 1230px;
     width:100%;
     margin: 0 auto;
     padding: 0 30px;
     // background-color: rgba(0, 255, 89, 0.22);
+}
+@mixin button{
+    border-radius: 6px;
+    background: $colorBlue;
+
+    color: #FFF;
+     &:hover{
+        background-color:$colorBlueHover;
+    }
+    &:active{
+        transform: scale(0.97);
+    }
 }
 
 
@@ -87,22 +100,12 @@ $colorGrey: #72727E;
    margin-top: 10px;
 }
 .button-1 {
+    @include button();
     width: 170px;
     height: 50px;
-    border-radius: 6px;
-    background: $colorBlue;
-
-    color: #FFF;
     font-size: 16px;
     font-weight: 400;
     line-height: 22.4px;
-
-    &:hover{
-        background-color:$colorBlueHover;
-    }
-    &:active{
-        transform: scale(1.03);
-    }
     }
 .burger__nav-box-3 {
     margin-top: 38px;
@@ -187,5 +190,66 @@ $colorGrey: #72727E;
     height: 2px;
     background-color: $colorGrey;
 }
+
+// Baner
+.baner {
+    display: flex;
+    position: relative;
+    @include containerMain(); 
+}
+.baner__box-1 {
+ 
+}
+.baner__h1 {
+    color: $color141-b-41;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 50px;
+
+    margin-top: 180px;
+    max-width: 580px;
+}
+.baner__img-arrow {
+    display: inline-block;
+    width: 100px;
+    margin-left: 10px;
+}
+.baner_text {
+    color: $colorGrey;
+    font-size: 24px;
+    font-weight: 350;
+    line-height: 33.6px;
+
+    max-width: 528px;
+    margin-top: 19px;
+}
+.baner__button {
+    margin-top: 47px
+}
+.button {
+    @include button();
+    width: 240px;
+    height: 60px;
+
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 25.2px;
+}
+.baner__box-2 {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    transform: translateX(110px);
+    background:url('../img/photo/Transaction\ History\ 10.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    // max-width: 1040px;
+    max-width: 1040px;
+}
+.baner__img {
+}
+.baner__background {
+}
+
  
 
