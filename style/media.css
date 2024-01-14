@@ -26,6 +26,7 @@
   .baner__h1 {
     text-align: center;
     max-width: 100%;
+    background-color: transparent;
   }
   .baner__img-arrow {
     display: none;
@@ -36,6 +37,7 @@
   .baner_text {
     text-align: center;
     max-width: 100%;
+    background-color: transparent;
   }
   .baner__button {
     display: flex;
