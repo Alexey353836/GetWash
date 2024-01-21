@@ -126,8 +126,15 @@ $color141-b-41: #141B41;
     width: 120px;
     height: 22.178px;
 }
+.header__nav.open{
+    display: flex !important;
+    transform:translateX(0px);
+    visibility: visible;
+    transition: 0.3s;
+}
 .header__nav {
     display: flex;
+    // flex-direction: column;
     justify-content: space-between;
     align-items: center;
     width: 100%;
@@ -135,6 +142,7 @@ $color141-b-41: #141B41;
 }
 .nav__left {
     display: flex;
+    // flex-direction: column;
     align-items:center;
     justify-content: space-between;
     width: 100%;
@@ -165,32 +173,68 @@ $color141-b-41: #141B41;
     }
     }
 }
-.header__burger {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: 3px;
-    height: 20px;
-    cursor: pointer;
-    transition: 0.2s;
-    &:hover{
-       div{
-        background-color:$colorNavyBlue;
-       }
-    &:active{
-        div{
-            background-color:$colorRed;
-        }
-    }
-    }
-
+.burger{
     display: none;
+    align-items: center;
+    justify-content: flex-end;
+    width: 24px;
+    height: 14px;
+    position: relative;
+    z-index: 50;
+    cursor: pointer;
+    & span{
+        height: 2px;
+        width: 80%;
+        transform: scale(1);
+        background-color:$colorGrey;
+    } 
+    &::before,&::after{
+        content: '';
+        position: absolute;
+        height: 2px;
+        width: 100%;
+        background-color:$colorGrey;
+        transition: all 0.3s ease 0s; 
+    }
+    &::before{top:0}
+    &::after{bottom: 0;}  
 }
-.header__burger-line{
-    width: 20px;
-    height: 2px;
-    background-color: $colorGrey;
+.burger.active span{transform: scale(0);}
+.burger.active::before{
+top: 50%;
+transform: rotate(-45deg) translate(0, -50%);
 }
+.burger.active::after{
+    bottom: 50%;
+    transform: rotate(45deg) translate(0 , 50%);
+}
+
+// .header__burger {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     padding: 3px;
+//     height: 20px;
+//     cursor: pointer;
+//     transition: 0.2s;
+//     &:hover{
+//        div{
+//         background-color:$colorNavyBlue;
+//        }
+//     &:active{
+//         div{
+//             background-color:$colorRed;
+//         }
+//     }
+//     }
+
+//     display: none;
+// }
+// .header__burger-line{
+//     width: 20px;
+//     height: 2px;
+//     background-color: $colorGrey;
+// }
 
 // Baner
 .baner {

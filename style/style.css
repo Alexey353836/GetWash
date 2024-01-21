@@ -117,6 +117,13 @@ body {
   height: 22.178px;
 }
 
+.header__nav.open {
+  display: flex !important;
+  transform: translateX(0px);
+  visibility: visible;
+  transition: 0.3s;
+}
+
 .header__nav {
   display: flex;
   justify-content: space-between;
@@ -160,27 +167,49 @@ body {
   color: rgb(193, 32, 69);
 }
 
-.header__burger {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 3px;
-  height: 20px;
-  cursor: pointer;
-  transition: 0.2s;
+.burger {
   display: none;
+  align-items: center;
+  justify-content: flex-end;
+  width: 24px;
+  height: 14px;
+  position: relative;
+  z-index: 50;
+  cursor: pointer;
 }
-.header__burger:hover div {
-  background-color: #141B41;
+.burger span {
+  height: 2px;
+  width: 80%;
+  transform: scale(1);
+  background-color: #72727E;
 }
-.header__burger:hover:active div {
-  background-color: rgb(193, 32, 69);
+.burger::before, .burger::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 100%;
+  background-color: #72727E;
+  transition: all 0.3s ease 0s;
+}
+.burger::before {
+  top: 0;
+}
+.burger::after {
+  bottom: 0;
 }
 
-.header__burger-line {
-  width: 20px;
-  height: 2px;
-  background-color: #72727E;
+.burger.active span {
+  transform: scale(0);
+}
+
+.burger.active::before {
+  top: 50%;
+  transform: rotate(-45deg) translate(0, -50%);
+}
+
+.burger.active::after {
+  bottom: 50%;
+  transform: rotate(45deg) translate(0, 50%);
 }
 
 .baner {

@@ -7,13 +7,36 @@
   .header {
     margin-top: 19px;
   }
+  .header__nav {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 800px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    overflow-y: auto;
+    padding: 20px 20px;
+    background-color: #0b30ac;
+    transform: translateX(-2000px);
+    transition: 0.6s;
+    border-bottom-right-radius: 10px;
+    max-width: 100%;
+    visibility: hidden;
+    row-gap: 30px;
+  }
   .nav__left {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 539px;
+    row-gap: 30px;
   }
-  .nav__right {
-    display: none;
-  }
-  .header__burger {
+  .burger {
     display: flex;
   }
 }
