@@ -6,83 +6,17 @@
 }
 
 @media screen and (max-width:1100px) {
-
-    // Header
-    .header {
-        // margin-top: 19px;
-    }
-    .header__nav {
-        // display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        // align-items: center;
-        align-items: flex-start;
-        width: 100%;
-        max-width: 800px;
-
-        position: fixed;
-        top: 50px;
-        left: 0;
-        z-index: 50;
-        overflow-y: auto;
-        padding: 20px 20px;
-        // background-color:#303235;
-        background-color: #0b30ac;;
-        transform: translateX(-2000px);
-        transition: 0.6s;
-        border-bottom-right-radius: 10px;
-        max-width: 100%;
-        visibility: hidden;
-      row-gap: 30px;
-    }
     .nav__left {
-        display: flex;
-        flex-direction: column;
-        // align-items:center;
-        align-items: flex-start;
-        justify-content: space-between;
-        width: 100%;
-        max-width: 539px;
-
-        row-gap: 30px;
+     display: none;
     }
-    // .nav__left-text {
-    //     color: $colorGrey;
-    //     font-size: 18px;
-    //     font-weight: 300;
-    //     line-height: 25.2px;
-    //     transition: 0.2s;
-    //     &:hover{
-    //         color:$colorNavyBlue;
-    //     }
-    //     &:active{
-    //         color:$colorRed;
-    //     }
-    // }
-    // .nav__link {
-    //     color: $colorBlue;
-    //     font-size: 16px;
-    //     font-weight: 400;
-    //     line-height: 22.4px;
-    //     &:hover{
-    //         color:$colorBlueHover;
-    //     }
-    //     &:active{
-    //         color:$colorRed;
-    //     } 
-    // }
-
-    // .nav__left {
-    //  display: none;
-    // }
-    // .nav__right {
-    //     display: none;
-    // }
-    .burger{display: flex;}
-//     .header__burger {
-//         display: flex;
-//     }
+    .nav__right {
+        display: none;
+    }
+    .burger{
+        display: flex;
+    }
 }
+
 @media screen and (max-width:1000px){
     @mixin containerMain-2{
         max-width: 700px;
@@ -125,6 +59,7 @@
         display: block;
     }
 }
+
 @media screen and (max-width:600px){
     @mixin containerMain{
         max-width: 1230px;
@@ -132,17 +67,11 @@
         margin: 0 auto;
         padding: 0 10px;
     }
-    // header
-    .header {
-        padding: 0 20px;
-    }
 
     // Baner
     .baner__h1 {
         font-size: 25px;
         line-height: 35px;
-    
-        margin-top: 55px;
     }
     .baner__img-arrow-2{
         height: 20px;

@@ -34,14 +34,14 @@ body {
   width: 100%;
   min-width: 300px;
   margin: 0 auto;
+  position: relative;
 }
 
 .burger-menu {
   position: fixed;
   width: 100%;
   height: 100%;
-  left: 0;
-  top: 0;
+  background-color: rgba(0, 0, 0, 0.4039215686);
   transition: 0.2s;
   opacity: 1;
   visibility: hidden;
@@ -54,13 +54,16 @@ body {
 
 .burger__content {
   max-width: 250px;
-  background: rgba(255, 255, 255, 0.862745098);
+  background: #ffffff;
   padding: 0px 20px 42px;
   border-radius: 5px;
-  transform: translateX(-500px);
+  transform: translateX(500px);
   transition: 0.6s;
   border: #446DF6 solid 1px;
-  margin-top: 80px;
+  margin-top: 70px;
+  position: absolute;
+  right: 0;
+  padding: 20px;
 }
 
 .burger__content.open {
@@ -68,19 +71,17 @@ body {
   transition: 0.3s;
 }
 
-.burger__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto;
-}
-
 .burger__nav-box-1 {
   display: grid;
   row-gap: 30px;
   padding: 30px 0px;
-  justify-items: center;
+}
+
+.burger__text {
+  color: #72727E;
+}
+.burger__text:hover {
+  color: #141B41;
 }
 
 .burger__nav-box-2 {
@@ -91,7 +92,7 @@ body {
 
 .button-1 {
   border-radius: 6px;
-  background: #446DF6;
+  background: #244ac6;
   color: #FFF;
   width: 170px;
   height: 50px;
@@ -100,7 +101,7 @@ body {
   line-height: 22.4px;
 }
 .button-1:hover {
-  background-color: #244ac6;
+  background-color: #053efa;
 }
 .button-1:active {
   transform: scale(0.97);
@@ -109,6 +110,13 @@ body {
 .burger__nav-box-3 {
   margin-top: 38px;
   text-align: center;
+}
+
+.burger__link {
+  color: #244ac6;
+}
+.burger__link:hover {
+  color: rgb(8, 24, 248);
 }
 
 .header {
@@ -123,15 +131,23 @@ body {
   width: 100%;
   margin: 0 auto;
   padding: 0 30px;
-  z-index: 50;
-  background-color: rgba(255, 255, 255, 0.8549019608);
-  padding: 26px;
+  z-index: 51;
+  background-color: rgba(0, 0, 0, 0.904);
+  padding: 20px;
   border-radius: 5px;
 }
 
 .logo {
   width: 120px;
   height: 22.178px;
+}
+
+.header__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 760px;
+  width: 100%;
 }
 
 .nav__left {
@@ -143,29 +159,29 @@ body {
 }
 
 .nav__left-text {
-  color: #72727E;
+  color: rgba(255, 255, 255, 0.5137254902);
   font-size: 18px;
   font-weight: 300;
   line-height: 25.2px;
   transition: 0.2s;
 }
 .nav__left-text:hover {
-  color: #141B41;
+  color: #FFF;
 }
 .nav__left-text:active {
   color: rgb(193, 32, 69);
 }
 
 .nav__link {
-  color: #446DF6;
+  color: #7490ee;
   font-size: 16px;
   font-weight: 400;
   line-height: 22.4px;
 }
 .nav__link:hover {
-  color: #244ac6;
+  color: #fff;
 }
-.nav__link:hover:active {
+.nav__link:active {
   color: rgb(193, 32, 69);
 }
 
@@ -268,7 +284,7 @@ body {
 
 .button {
   border-radius: 6px;
-  background: #446DF6;
+  background: #244ac6;
   color: #FFF;
   width: 240px;
   height: 60px;
@@ -277,7 +293,7 @@ body {
   line-height: 25.2px;
 }
 .button:hover {
-  background-color: #244ac6;
+  background-color: #053efa;
 }
 .button:active {
   transform: scale(0.97);
