@@ -36,6 +36,7 @@ $color141-b-41: #141B41;
     width:100%;
     margin: 0 auto;
     padding: 0 30px;
+    // position: relative;
 }
 @mixin containerMain-2{
     max-width: 700px;
@@ -68,19 +69,28 @@ $color141-b-41: #141B41;
     height: 100%;
     left: 0;
     top: 0;
-    background-color:#00000067;
+    // background-color:#00000067;
     transition: 0.2s;
-    opacity: 0;
+    opacity: 1;
     visibility: hidden;
-    z-index: 2;
+    z-index: 50;
+}
+.burger-menu.open{
+    visibility: visible;
 }
 .burger__content {
-    max-width: 320px;
-    background: #FFF;
-    padding: 19px 20px 42px;
+    max-width: 250px;
+    background: #ffffffdc;
+    padding: 0px 20px 42px;
     border-radius:5px;
-    transform: translateX(-320px);
-    transition:  0.5s;
+    transform: translateX(-500px);
+    transition: 0.6s;
+    border:#446DF6 solid 1px;
+    margin-top: 80px;
+}
+.burger__content.open{
+    transform: translateX(0px); 
+    transition: 0.3s;
 }
 .burger__header {
     display: flex;
@@ -117,29 +127,36 @@ $color141-b-41: #141B41;
 // Header
 .header {
     display: flex;
+    position: fixed;
+    left: 0; right: 0; top: 0;
     justify-content: space-between;
     align-items: center;
     @include containerMain();
-    margin-top: 39px;
+    // margin-top: 39px;
+    z-index: 50;
+    background-color:#ffffffda;
+    padding: 26px;
+    border-radius:5px;
 }
 .logo {
     width: 120px;
     height: 22.178px;
 }
-.header__nav.open{
-    display: flex !important;
-    transform:translateX(0px);
-    visibility: visible;
-    transition: 0.3s;
-}
-.header__nav {
-    display: flex;
-    // flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    max-width: 800px;
-}
+
+// .header__nav.open{
+//     display: flex !important;
+//     transform:translateX(0px);
+//     visibility: visible;
+//     transition: 0.3s;
+// }
+// .header__nav {
+//     display: flex;
+//     // flex-direction: column;
+//     justify-content: space-between;
+//     align-items: center;
+//     width: 100%;
+//     max-width: 800px;
+// }
 .nav__left {
     display: flex;
     // flex-direction: column;
@@ -180,7 +197,7 @@ $color141-b-41: #141B41;
     width: 24px;
     height: 14px;
     position: relative;
-    z-index: 50;
+    z-index: 51;
     cursor: pointer;
     & span{
         height: 2px;
