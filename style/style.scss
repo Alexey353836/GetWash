@@ -70,12 +70,13 @@ $color141-b-41: #141B41;
     height: 100%;
     background-color:#00000067;
     transition: 0.2s;
-    opacity: 1;
+    opacity: 0;
     visibility: hidden;
     z-index: 50;
 }
 .burger-menu.open{
     visibility: visible;
+    opacity: 1;
 }
 .burger__content {
     max-width: 250px;
