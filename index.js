@@ -10,7 +10,6 @@ document.querySelector('.burger').addEventListener('click', function() {
 // Menu
 const navLeft = document.querySelector('.nav__left'),
      burgerNavBox1 = document.querySelector('.burger__nav-box-1');
-
 const menuBox = {
     menu:[
         'Как использовать',
