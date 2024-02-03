@@ -54,14 +54,6 @@ $color141-b-41: #141B41;
     }
 }
 
-
-.container__fullScreen{
-    background-color: #000;
-    position: fixed;
-    left: 0; right: 0; top: 0;
-    width: 100%;
-    z-index: 51;
-}
 .container{
 //    max-width: 1440px; 
    max-width: 1500px; 
@@ -220,8 +212,8 @@ $color141-b-41: #141B41;
     background-color:rgba(0, 0, 0, 0.904);
     padding: 20px;
     border-radius:5px;
-   max-width: 1500px;
-   margin: 0 auto;
+//    max-width: 1500px;
+//    margin: 0 auto;
 }
 .logo {
     width: 120px;
