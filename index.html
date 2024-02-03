@@ -13,32 +13,36 @@
     <link rel="stylesheet" href="style/media.css">
 </head>
 <body>   
-  
-    <div class="container">
+    <div class="container__fullScreen">
+        <div class="container">
+            
+            <!-- Header -->
+            <header class="header">
+                <div class="header__logo">
+                    <a href="#"><img src="img/icons/GetWash.svg" alt="Get Whash" class="logo"></a>
+                </div>
+                <div class="header__nav">
+                    <nav class="nav__left">
+                        <a href="#" class="nav__left-text">Как использовать</a>
+                        <a href="#" class="nav__left-text">Партнерам</a>
+                        <a href="#" class="nav__left-text">Скачать</a>
+                        <a href="#" class="nav__left-text"> Отзывы</a>
+                    </nav>
+                    <nav class="nav__right">
+                        <a href="#" class="nav__link">Получить доступ</a>
+                    </nav>
+                </div>
+                <div class="burger">
+                    <span></span>
+                </div>
+            </header> 
 
-        <!-- Header -->
-        <header class="header">
-            <div class="header__logo">
-                <a href="#"><img src="img/icons/GetWash.svg" alt="Get Whash" class="logo"></a>
-            </div>
-            <div class="header__nav">
-                <nav class="nav__left">
-                    <a href="#" class="nav__left-text">Как использовать</a>
-                    <a href="#" class="nav__left-text">Партнерам</a>
-                    <a href="#" class="nav__left-text">Скачать</a>
-                    <a href="#" class="nav__left-text"> Отзывы</a>
-                </nav>
-                <nav class="nav__right">
-                    <a href="#" class="nav__link">Получить доступ</a>
-                </nav>
-            </div>
-            <div class="burger">
-                <span></span>
-            </div>
-        </header> 
-   
+        </div>
+    </div>
+    <div class="container">
           <!-- Burger -->
         <section class="burger-menu">
+            <div class="black"></div>
             <div class="burger__content">
                 <div class="burger__header">
                     <div class="header__logo">
@@ -58,18 +62,20 @@
                     <div class="burger__nav-box-3">
                         <a href="#" class="burger__link">Получить доступ</a>
                     </div>
-                    <div class="burger__nav-box-4">
-                       <div class="burger__nav-box-box-4">
-                            <div class="burger__nav-close">
-                                <span class="line-1"></span>
-                                <span class="line-2"></span>
-                            </div>
-                       </div>
-                    </div>
                 </nav>
+                <div class="burger__nav-box-4">
+                    <div class="burger__nav-box-box-4">
+                         <div class="burger__nav-close">
+                             <div class="line-1"></div>
+                             <div class="line-2"></div>
+                         </div>
+                    </div>
+                 </div>
             </div>
         </section>
 
+    </div>
+    <div class="container">
         <!-- Baner -->
         <section class="baner">
 
@@ -96,6 +102,7 @@
         </section>
 
     </div>
+   
 
     <script src="index.js"></script>
 </body>
