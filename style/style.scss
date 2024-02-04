@@ -193,7 +193,7 @@ $color141-b-41: #141B41;
     position: absolute;
     width: 60%;
     height: 3px;
-    background-color:#fff;
+    background-color: $colorGrey;
     top: 50%;
     transform: rotate(-45deg) translate(0, -70%);
 }
@@ -201,7 +201,7 @@ $color141-b-41: #141B41;
     position: absolute;
     width: 60%;
     height: 3px;
-    background-color: #fff;
+    background-color: $colorGrey;
     bottom: 50%;
     transform: rotate(45deg) translate(0, 70%);
 }

@@ -188,7 +188,7 @@ body {
   position: absolute;
   width: 60%;
   height: 3px;
-  background-color: #fff;
+  background-color: #72727E;
   top: 50%;
   transform: rotate(-45deg) translate(0, -70%);
 }
@@ -197,7 +197,7 @@ body {
   position: absolute;
   width: 60%;
   height: 3px;
-  background-color: #fff;
+  background-color: #72727E;
   bottom: 50%;
   transform: rotate(45deg) translate(0, 70%);
 }
