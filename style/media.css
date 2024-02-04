@@ -10,8 +10,8 @@
   .nav__right {
     display: none;
   }
-  .burger {
-    display: flex;
+  .box__burger {
+    display: block;
   }
 }
 @media screen and (max-width: 1000px) {

@@ -40,6 +40,9 @@ $color141-b-41: #141B41;
 }
 @mixin containerMain-2{
     max-width: 700px;
+    width:100%;
+    margin: 0 auto;
+    padding: 0 30px;
 }
 @mixin button{
     border-radius: 6px;
@@ -55,13 +58,13 @@ $color141-b-41: #141B41;
 }
 
 .container{
-//    max-width: 1440px; 
+   position: relative;
    max-width: 1500px; 
    width: 100%;
    min-width: 300px;
    margin: 0 auto;
-   position: relative;
    padding: 0 30px;
+//    background-color:#053efa;
 }
 
 // burger
@@ -73,12 +76,11 @@ $color141-b-41: #141B41;
     top: 0;
     right: 0;
     bottom:0;
-    
     background-color:#00000067;
     transition: 0.2s;
     opacity: 0;
     visibility: hidden;
-    z-index: 50;
+    z-index: 20;
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -113,6 +115,7 @@ $color141-b-41: #141B41;
     display: flex;
     align-items:center;
     margin-left: 20px;
+    margin-top: 20px;
     background-color: #fff;
     height: 50px;
 }
@@ -120,13 +123,18 @@ $color141-b-41: #141B41;
     padding: 0px 20px 0px;
 }
 .burger__nav-box-1 {
-   display: grid;
-   row-gap: 30px;
-   padding: 30px 0px;
+    border-bottom: 1px solid #000;
+    margin-top: 22px;
+}
+.box_burger-text{
+    display: flex;
+    align-items:center;
+    height: 50px;
+    padding: 20px;
+    border-top: 1px solid #000;
 }
 .burger__text{
     color:$colorGrey;
-    // text-align: left;
     &:hover{
         color:$color141-b-41;
     }
@@ -134,7 +142,7 @@ $color141-b-41: #141B41;
 .burger__nav-box-2 {
    display: flex;
    justify-content: center;
-   margin-top: 10px;
+   margin-top: 38px;
 }
 .button-1 {
     @include button();
@@ -183,37 +191,36 @@ $color141-b-41: #141B41;
 }
 .line-1 {
     position: absolute;
-    width: 80%;
+    width: 60%;
     height: 3px;
     background-color:#fff;
     top: 50%;
-    transform: rotate(-45deg) translate(0, -50%);
+    transform: rotate(-45deg) translate(0, -70%);
 }
 .line-2 {
     position: absolute;
-    width: 80%;
+    width: 60%;
     height: 3px;
     background-color: #fff;
     bottom: 50%;
-    transform: rotate(45deg) translate(0, 50%);
+    transform: rotate(45deg) translate(0, 70%);
 }
-
-
 
 
 // Header
 .header {
     display: flex;
-  
+    position: fixed;
     justify-content: space-between;
     align-items: center;
-    // @include containerMain();
-    z-index: 51;
-    background-color:rgba(0, 0, 0, 0.904);
+    z-index: 60;
+    background-color:#000;
     padding: 20px;
     border-radius:5px;
-//    max-width: 1500px;
-//    margin: 0 auto;
+    margin: 0 auto;
+    width: 100%;
+    left: 0;
+    top: 0;
 }
 .logo {
     width: 120px;
@@ -259,15 +266,19 @@ $color141-b-41: #141B41;
         color:$colorRed;
     }
 }
-.burger{
+.box__burger{
     display: none;
+}
+.burger{
+    display: flex;
     align-items: center;
     justify-content: flex-end;
     width: 28px;
-    height: 18px;
+    height: 28px;
     position: relative;
     z-index: 51;
     cursor: pointer;
+    // background-color:#053efa;
     & span{
         height: 3px;
         width: 80%;
@@ -282,17 +293,17 @@ $color141-b-41: #141B41;
         background-color:$colorGrey;
         transition: all 0.3s ease 0s; 
     }
-    &::before{top:0}
-    &::after{bottom: 0;}  
+    &::before{top:5px}
+    &::after{bottom: 5px;}  
 }
 .burger.active span{transform: scale(0);}
 .burger.active::before{
-top: 50%;
-transform: rotate(-45deg) translate(0, -50%);
+    top: 50%;
+    transform: rotate(-45deg) translate(0 , -70%);
 }
 .burger.active::after{
     bottom: 50%;
-    transform: rotate(45deg) translate(0 , 50%);
+    transform: rotate(45deg) translate(0%, 70%);
 }
 
 // Baner
@@ -300,7 +311,7 @@ transform: rotate(-45deg) translate(0, -50%);
     display: flex;
     flex-direction: row;
     position: relative;
-    // @include containerMain(); 
+    margin: 0 auto;
 }
 .baner__box-1 {
     z-index: 1;

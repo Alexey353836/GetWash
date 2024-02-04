@@ -11,7 +11,8 @@ burger.addEventListener('click', close);
 }
 
 
-// Menu
+
+// Burger menu
 const black = document.querySelector('.black');
 const burgerNavClose = document.querySelector('.burger__nav-close');
 
@@ -19,6 +20,8 @@ burgerNavClose.addEventListener("click", close);
 black.addEventListener('click', close);
 
 
+
+// Menu
 const navLeft = document.querySelector('.nav__left'),
      burgerNavBox1 = document.querySelector('.burger__nav-box-1');
 const menuBox = {
@@ -30,6 +33,7 @@ const menuBox = {
         'Контакты'
     ]
 }
+
 menuBox.menu.sort();
 navLeft.innerHTML = '';
 burgerNavBox1.innerHTML = '';
@@ -38,8 +42,7 @@ menuBox.menu.forEach((item) => {
     <a href="#" class="nav__left-text">${item}</a>
     `;
     burgerNavBox1.innerHTML += `
-    <a href="#" class="burger__text">${item}</a>
+   
+    <div class="box_burger-text"><a href="#" class="burger__text">${item}</a></div>
     `;
 });
-
-
