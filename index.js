@@ -2,22 +2,28 @@
 
 // Burger
 const burger = document.querySelector('.burger');
-burger.addEventListener('click', close);
+const burgerMenu = document.querySelector('.burger-menu');
 
-    function close() {
+burger.addEventListener('click', closeOpen);
+
+    function closeOpen () {
         burger.classList.toggle('active');
         document.querySelector('.burger-menu').classList.toggle('open');
         document.querySelector('.burger__content').classList.toggle('open');
+      
 }
 
 
-
 // Burger menu
-const black = document.querySelector('.black');
 const burgerNavClose = document.querySelector('.burger__nav-close');
 
-burgerNavClose.addEventListener("click", close); 
-black.addEventListener('click', close);
+burgerNavClose.addEventListener("click", closeOpen); 
+burgerMenu.addEventListener('click', (event) => {
+    if (event.target && event.target.classList.contains('close')){
+        closeOpen ();
+        }
+});
+
 
 
 
@@ -42,7 +48,6 @@ menuBox.menu.forEach((item) => {
     <a href="#" class="nav__left-text">${item}</a>
     `;
     burgerNavBox1.innerHTML += `
-   
     <div class="box_burger-text"><a href="#" class="burger__text">${item}</a></div>
     `;
 });
