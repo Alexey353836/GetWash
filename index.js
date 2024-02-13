@@ -25,8 +25,6 @@ function closeMenu() {
     document.body.style.overflow = '';
 }
 
-close.addEventListener('click', closeMenu);
-
 burger.addEventListener('click', () => {
     if (burger.classList.contains('burger-open')){
         openMenu();
@@ -35,13 +33,13 @@ burger.addEventListener('click', () => {
     }
 });
 
+close.addEventListener('click', closeMenu);
 
 // Burger menu
-
 burgerMenu.addEventListener('click', (e) => {
-    if (e.target && e.target.classList.contains('close')){
-        closeMenu ();
-        }
+    // if (e.target && e.target.classList.contains('close')){
+    //     closeMenu ();
+    //     }
     if (e.target && e.target === burgerMenu){
         closeMenu();
         }
@@ -73,3 +71,37 @@ menuBox.menu.forEach((item) => {
     <div class="box_burger-text"><a href="#" class="burger__text">${item}</a></div>
     `;
 });
+
+
+// Modal
+
+const btn = document.querySelectorAll('.button'),
+    modal = document.querySelector('.modal'),
+    modalDialog = document.querySelector('.modal__dialog'),
+    modalClose = document.querySelector('.modal__close');
+
+function openModal(){
+   modal.classList.add('show');
+   modalDialog.classList.add('show');
+   document.body.style.overflow = 'hidden';
+
+}
+
+btn.forEach(item => {
+    item.addEventListener('click', openModal);
+});
+
+function closeModal() {
+    modal.classList.remove('show');
+    modalDialog.classList.remove('show');
+    document.body.style.overflow = '';
+}
+
+modalClose.addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => {
+    if(e.target === modal) {
+        closeModal();
+    }
+});
+
+
