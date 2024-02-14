@@ -80,6 +80,8 @@ const btn = document.querySelectorAll('.button'),
     modalDialog = document.querySelector('.modal__dialog'),
     modalClose = document.querySelector('.modal__close');
 
+// Открыть Модальное окно
+
 function openModal(){
    modal.classList.add('show');
    modalDialog.classList.add('show');
@@ -87,9 +89,23 @@ function openModal(){
 
 }
 
+const modalTimerId = setTimeout(openModal, 5000);
+
+function showModalByScroll() {
+    if (window.pageYOffset + document.documentElement.clientHeight >= document.
+        documentElement.scrollHeight -1) {
+        openModal(); 
+        window.removeEventListener('scroll', showModalByScroll);
+    } 
+}
+
+window.addEventListener('scroll', showModalByScroll);
+
 btn.forEach(item => {
     item.addEventListener('click', openModal);
 });
+
+ //  Закрыть модальное окно
 
 function closeModal() {
     modal.classList.remove('show');
