@@ -9,14 +9,14 @@ const scrollController = {
   disabledScroll() {
       scrollController.scrollPosition = window.scrollY;
       header.style.cssText = `
-    //   padding-right:20px;
-      padding-right: ${(window.innerWidth - document.body.offsetWidth + px)};
+      padding-right:35px;
+    //   padding-right: ${(window.innerWidth - document.body.offsetWidth)}px;
     `;
       document.body.style.cssText = `
       overflow: hidden;
       top:-${scrollController.scrollPosition}px;
       left: 0;
-      padding-right: ${(window.innerWidth - document.body.offsetWidth + px)};
+      padding-right: ${(window.innerWidth - document.body.offsetWidth)}px;
       `;
       document.documentElement.style.scrollBehavior = 'unset';
   },
@@ -41,7 +41,6 @@ const burgerBody = document.querySelector('.burger__body');
 const burgerContent = document.querySelector('.burger__content');
 const burgerClose = document.querySelector('.burger-close');
 const close = document.querySelectorAll('.close');
-
 
 function openMenu(){
     burgerMenu.classList.add('open');
@@ -125,13 +124,13 @@ const btn = document.querySelectorAll('.button'),
     modalClose = document.querySelector('.modal__close');
 
 function openModal(){
-   burger.removeEventListener('click', burgerOpenClose);
+//    burger.removeEventListener('click', burgerOpenClose);
    modal.classList.add('show');
    modalDialog.classList.add('show');
    scrollController.disabledScroll();
 }
 
-const modalTimerId = setTimeout(openModal, 1000000);
+// const modalTimerId = setTimeout(openModal, 1000000);
 
 function showModalByScroll() {
     if (window.pageYOffset + document.documentElement.clientHeight >= document.
