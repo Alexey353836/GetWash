@@ -124,13 +124,13 @@ const btn = document.querySelectorAll('.button'),
     modalClose = document.querySelector('.modal__close');
 
 function openModal(){
-//    burger.removeEventListener('click', burgerOpenClose);
+   burger.removeEventListener('click', burgerOpenClose);
    modal.classList.add('show');
    modalDialog.classList.add('show');
    scrollController.disabledScroll();
 }
 
-// const modalTimerId = setTimeout(openModal, 1000000);
+const modalTimerId = setTimeout(openModal, 100000);
 
 function showModalByScroll() {
     if (window.pageYOffset + document.documentElement.clientHeight >= document.
