@@ -27,6 +27,7 @@ button {
 body {
   font-family: "Rubik", sans-serif;
   background-color: #fff;
+  overflow-x: hidden;
 }
 
 .container {
@@ -46,9 +47,6 @@ body {
   top: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.4039215686);
-  transition: 0.2s;
-  opacity: 0;
   visibility: hidden;
   z-index: 20;
   overflow-y: auto;
@@ -57,7 +55,24 @@ body {
 
 .burger-menu.open {
   visibility: visible;
+}
+
+.burger__body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4039215686);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.2s;
+}
+
+.burger__body.open {
   opacity: 1;
+  visibility: visible;
+  transition: 0.3s;
 }
 
 .burger__content {
@@ -70,7 +85,7 @@ body {
   margin-top: 70px;
   padding: 0px 0px 0px;
   transform: translateX(500px);
-  transition: 0.6s;
+  transition: 0.7s;
 }
 
 .burger__content.open {
@@ -105,7 +120,7 @@ body {
 }
 
 .burger__text {
-  color: #72727E;
+  color: #535379;
 }
 .burger__text:hover {
   color: #141B41;
@@ -128,7 +143,7 @@ body {
   line-height: 22.4px;
 }
 .button-1:hover {
-  background-color: #053efa;
+  background-color: #0531c3;
 }
 .button-1:active {
   transform: scale(0.97);
@@ -150,10 +165,10 @@ body {
 .burger__nav-box-4 {
   position: sticky;
   left: 0;
-  bottom: 0px;
+  bottom: 0;
   width: 100%;
-  height: 40px;
-  background-color: #72727E;
+  height: 52px;
+  background-color: #535379;
   display: flex;
   justify-content: flex-end;
 }
@@ -161,37 +176,42 @@ body {
 .burger__nav-box-box-4 {
   position: relative;
   display: flex;
-  justify-content: flex-end;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2px;
 }
 
 .burger__nav-close {
   position: relative;
   right: 0;
-  width: 40px;
-  height: 40px;
+  width: 46px;
+  height: 46px;
   background-color: #000;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 6px;
 }
 
 .line-1 {
   position: absolute;
   width: 60%;
   height: 3px;
-  background-color: #72727E;
+  background-color: #535379;
   top: 50%;
   transform: rotate(-45deg) translate(0, -70%);
+  margin-left: 2px;
 }
 
 .line-2 {
   position: absolute;
   width: 60%;
   height: 3px;
-  background-color: #72727E;
+  background-color: #535379;
   bottom: 50%;
   transform: rotate(45deg) translate(0, 70%);
+  margin-left: 2px;
 }
 
 .header {
@@ -200,7 +220,7 @@ body {
   justify-content: space-between;
   align-items: center;
   z-index: 60;
-  background-color: #000;
+  background-color: #fff;
   padding: 20px;
   border-radius: 5px;
   margin: 0 auto;
@@ -226,32 +246,40 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
-  max-width: 539px;
 }
 
 .nav__left-text {
-  color: rgba(255, 255, 255, 0.5137254902);
+  color: #535379;
   font-size: 18px;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 25.2px;
   transition: 0.2s;
+  margin-right: 40px;
 }
 .nav__left-text:hover {
-  color: #FFF;
+  color: #222222;
 }
 .nav__left-text:active {
   color: rgb(193, 32, 69);
 }
+.nav__left-text:last-child {
+  margin-right: 0;
+}
 
 .nav__link {
-  color: #7490ee;
+  color: #244ac6;
   font-size: 16px;
   font-weight: 400;
   line-height: 22.4px;
+  border: 1px solid #fff;
+  padding: 14px 25px;
+  border-radius: 6px;
+  transition: 0.4s;
 }
 .nav__link:hover {
-  color: #fff;
+  color: #0531c3;
+  border: 1px solid #0531c3;
+  transition: 0.2s;
 }
 .nav__link:active {
   color: rgb(193, 32, 69);
@@ -275,14 +303,14 @@ body {
   height: 3px;
   width: 80%;
   transform: scale(1);
-  background-color: #72727E;
+  background-color: #535379;
 }
 .burger::before, .burger::after {
   content: "";
   position: absolute;
   height: 3px;
   width: 100%;
-  background-color: #72727E;
+  background-color: #535379;
   transition: all 0.3s ease 0s;
 }
 .burger::before {
@@ -366,7 +394,7 @@ body {
   line-height: 25.2px;
 }
 .button:hover {
-  background-color: #053efa;
+  background-color: #0531c3;
 }
 .button:active {
   transform: scale(0.97);

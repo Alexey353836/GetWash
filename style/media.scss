@@ -1,11 +1,14 @@
 @media screen and (max-width: 1200px) {
        // Baner
-       .baner__h1 {
-        margin-top: 100px;
-    }
+    // .baner__h1 {
+    //     margin-top: 100px;
+    // }
 }
 
 @media screen and (max-width:1100px) {
+    .baner__h1 {
+        margin-top: 100px;
+    }
     .nav__left {
      display: none;
     }
