@@ -49,6 +49,28 @@
   .baner__img-2 {
     display: block;
   }
+  .start {
+    margin-top: 70px;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .start__title {
+    text-align: center;
+  }
+  .start__box-2-item {
+    flex-direction: column;
+  }
+  .start__box-2-boxText {
+    margin-left: 0px;
+  }
+  .start__box-2-title {
+    text-align: center;
+    margin-top: 40px;
+  }
+  .start__box-2-text {
+    text-align: center;
+    margin-top: 10px;
+  }
 }
 @media screen and (max-width: 600px) {
   .baner__h1 {
@@ -83,5 +105,17 @@
   }
   .modal__input, .btn {
     font-size: 18px;
+  }
+  .start__title {
+    font-size: 23px;
+    line-height: 27px;
+  }
+  .start__box-2-title {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  .start__box-2-text {
+    font-size: 14px;
+    line-height: 19px;
   }
 }/*# sourceMappingURL=media.css.map */

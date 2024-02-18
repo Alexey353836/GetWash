@@ -59,6 +59,14 @@ $color141-b-41Hover: #222222;
         transform: scale(0.97);
     }
 }
+@mixin subtitle(){
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 44px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:$color141-b-41;
+}
 
 .container{
    position: relative;
@@ -79,9 +87,6 @@ $color141-b-41Hover: #222222;
     top: 0;
     right: 0;
     bottom:0;
-    // background-color:#00000067;
-    // transition: 0.6s;
-    // opacity: 0;
     visibility: hidden;
     z-index: 20;
     overflow-y: auto;
@@ -89,8 +94,6 @@ $color141-b-41Hover: #222222;
 }
 .burger-menu.open{
     visibility: visible;
-    // opacity: 1;
-    // transform: 0.3s;
 }
 .burger__body{
     position: fixed;
@@ -232,7 +235,6 @@ $color141-b-41Hover: #222222;
     justify-content: space-between;
     align-items: center;
     z-index: 60;
-    // background-color:#000;
     background-color:#fff;
     padding: 20px;
     border-radius:5px;
@@ -256,10 +258,6 @@ $color141-b-41Hover: #222222;
     display: flex;
     align-items:center;
     justify-content: space-between;
-
-    // width: 100%;
-    // max-width: 539px;
-
 }
 .nav__left-text {
     color: $colorGrey;
@@ -269,8 +267,7 @@ $color141-b-41Hover: #222222;
     transition: 0.2s;
     margin-right: 40px;
     &:hover{
-        color:$color141-b-41Hover;
-       
+        color:$color141-b-41Hover; 
     }
     &:active{
         color:$colorRed;
@@ -407,6 +404,76 @@ $color141-b-41Hover: #222222;
     margin-top: 50px;
 }
 
+// Start
+.start {
+    display: flex;
+    // max-height: 724px;
+    justify-content: space-around;
+    margin-top: 130px;
+}
+.start__box-1-img {
+    max-width: 420px;
+}
+.start__title {
+    @include subtitle();
+}
+.start__box-2 {
+    display: flex;
+    flex-direction: column;
+}
+.start__box-2-items {
+    display: grid;
+    row-gap: 60px;
+    margin-top: 60px;
+}
+.start__box-2-item {
+    display: flex;
+   align-items:center;
+}
+.start__box-2-icon{
+    font-size: 36px;
+    color:$colorBlue;
+}
+.start__box-2-boxText {
+    margin-left: 40px;
+}
+.start__box-2-title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+}
+.start__box-2-text {
+    font-family: GT Eesti Pro Display;
+    font-size: 18px;
+    font-weight: 350;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    
+    margin-top: 10px;
+}
+.start__box-2-title {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:$color141-b-41;
+}
+.start__box-2-text {
+    font-size: 18px;
+    font-weight: 350;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:$color141-b-41;
+
+    margin-top: 8px;
+}
+
+
 // Modal
 .modal {
     position: fixed;
@@ -484,6 +551,8 @@ $color141-b-41Hover: #222222;
      transform: scale(0.97);;
    }
 }
+
+
 
 
 
