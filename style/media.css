@@ -13,6 +13,10 @@
   }
 }
 @media screen and (max-width: 1000px) {
+  .container {
+    max-width: 800px;
+    padding: 0 20px;
+  }
   .baner {
     max-width: 700px;
     flex-direction: column;
