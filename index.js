@@ -8,9 +8,8 @@ const scrollController = {
    scrollPosition: 0,
   disabledScroll() {
       scrollController.scrollPosition = window.scrollY;
-      header.style.cssText = `
-      padding-right:35px;
-    //   padding-right: ${(window.innerWidth - document.body.offsetWidth)}px;
+      body.header.style.cssText = `
+      padding-right: ${(window.innerWidth - document.body.offsetWidth)}px;
     `;
       document.body.style.cssText = `
       overflow: hidden;
@@ -122,6 +121,7 @@ const btn = document.querySelectorAll('.button'),
     modal = document.querySelector('.modal'),
     modalDialog = document.querySelector('.modal__dialog'),
     modalClose = document.querySelector('.modal__close');
+    const dataClose = document.querySelectorAll('[data-close]');
 
 function openModal(){
    burger.removeEventListener('click', burgerOpenClose);
@@ -153,7 +153,11 @@ function closeModal() {
     scrollController.enabledScroll();
 }
 
-modalClose.addEventListener('click', closeModal);
+dataClose.forEach(item => {
+    item.addEventListener('click', closeModal);
+});
+// dataClose .addEventListener('click', closeModal);
+// modalClose.addEventListener('click', closeModal);
 modal.addEventListener('click', (e) => {
     if(e.target === modal) {
         closeModal();
