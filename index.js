@@ -8,8 +8,9 @@ const scrollController = {
    scrollPosition: 0,
   disabledScroll() {
       scrollController.scrollPosition = window.scrollY;
-      body.header.style.cssText = `
-      padding-right: ${(window.innerWidth - document.body.offsetWidth)}px;
+      header.style.cssText = `
+    //   padding-right: ${(window.innerWidth - document.body.offsetWidth)}px;
+      padding-right:35px;
     `;
       document.body.style.cssText = `
       overflow: hidden;
@@ -27,7 +28,7 @@ const scrollController = {
     document.body.style.cssText = ``;
     },
 }
-//scroll end
+
 
 
 
@@ -73,16 +74,6 @@ close.forEach(e => {
     e.addEventListener('click', closeMenu);
 })
 
-// Burger menu
-// burgerMenu.addEventListener('click', (e) => {
-//     if (e.target && e.target.classList.contains('close')){
-//         closeMenu ();
-//         }
-//     if (e.target && e.target === burgerMenu){
-//         closeMenu();
-//         }
-// });
-// Burger end
     
 
 
@@ -111,7 +102,7 @@ menuBox.menu.forEach((item) => {
     <div class="box_burger-text"><a href="#" class="burger__text">${item}</a></div>
     `;
 });
-// Menu end
+
 
 
 
@@ -130,17 +121,16 @@ function openModal(){
    scrollController.disabledScroll();
 }
 
-// const modalTimerId = setTimeout(openModal, 100000);
+const modalTimerId = setTimeout(openModal, 100000);
 
-// function showModalByScroll() {
-//     if (window.pageYOffset + document.documentElement.clientHeight >= document.
-//         documentElement.scrollHeight -1) {
-//         openModal(); 
-//         window.removeEventListener('scroll', showModalByScroll);
-//     } 
-// }
-
-// window.addEventListener('scroll', showModalByScroll);
+function showModalByScroll() {
+    if (window.pageYOffset + document.documentElement.clientHeight >= document.
+        documentElement.scrollHeight -1) {
+        openModal(); 
+        window.removeEventListener('scroll', showModalByScroll);
+    } 
+}
+window.addEventListener('scroll', showModalByScroll);
 
 btn.forEach(item => {
     item.addEventListener('click', openModal);
