@@ -108,10 +108,10 @@ menuBox.menu.forEach((item) => {
 
 
 // Modal
-const btn = document.querySelectorAll('.button'),
+const btnModal = document.querySelectorAll('[data-btnModal]'),
     modal = document.querySelector('.modal'),
-    modalDialog = document.querySelector('.modal__dialog'),
-    modalClose = document.querySelector('.modal__close');
+    modalDialog = document.querySelector('.modal__dialog');
+    // modalClose = document.querySelector('.modal__close');
     const dataClose = document.querySelectorAll('[data-close]');
 
 function openModal(){
@@ -121,18 +121,18 @@ function openModal(){
    scrollController.disabledScroll();
 }
 
-const modalTimerId = setTimeout(openModal, 100000);
+// const modalTimerId = setTimeout(openModal, 100000);
 
-function showModalByScroll() {
-    if (window.pageYOffset + document.documentElement.clientHeight >= document.
-        documentElement.scrollHeight -1) {
-        openModal(); 
-        window.removeEventListener('scroll', showModalByScroll);
-    } 
-}
-window.addEventListener('scroll', showModalByScroll);
+// function showModalByScroll() {
+//     if (window.pageYOffset + document.documentElement.clientHeight >= document.
+//         documentElement.scrollHeight -1) {
+//         openModal(); 
+//         window.removeEventListener('scroll', showModalByScroll);
+//     } 
+// }
+// window.addEventListener('scroll', showModalByScroll);
 
-btn.forEach(item => {
+btnModal.forEach(item => {
     item.addEventListener('click', openModal);
 });
 
@@ -146,12 +146,10 @@ function closeModal() {
 dataClose.forEach(item => {
     item.addEventListener('click', closeModal);
 });
-// dataClose .addEventListener('click', closeModal);
-// modalClose.addEventListener('click', closeModal);
+
 modal.addEventListener('click', (e) => {
     if(e.target === modal) {
         closeModal();
     }
 });
-// Modal end
 

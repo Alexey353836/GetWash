@@ -1,6 +1,11 @@
-@media screen and (max-width: 1200px) {
-
+@media screen and (max-width: 1400px){
+    // partners
+    .partners__items {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }
+@media screen and (max-width: 1200px){}
 
 @media screen and (max-width:1100px) {
     // Baner
