@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+h1,h2,h3,h4,h5,h6,p{
+    margin: 0;
+    padding: 0;
+}
+img{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+button{
+    border:none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+
+body{
+    font-family: 'Rubik', sans-serif;
+    background-color: #fff;
+    overflow-x: hidden;
+    $color141-b-41: #141B41;
+}
+$colorBlue:  #244ac6;
+$colorBlueHover:  #0531c3;
+$colorBlueHoverrNext: #172c74;
+$colorNavyBlue:#141B41;
+$colorRed: rgb(193, 32, 69);
+$colorGrey: #535379;
+$color141-b-41: #141B41;
+$color141-b-41Hover: #222222;
+@mixin containerMain{
+    max-width: 1230px;
+    width:100%;
+    margin: 0 auto;
+    padding: 0 30px;
+    // position: relative;
+}
+@mixin containerMain-2{
+    max-width: 700px;
+    width:100%;
+    margin: 0 auto;
+    padding: 0 30px;
+}
+@mixin button{
+    border-radius: 6px;
+    background: $colorBlue;
+
+    color: #FFF;
+     &:hover{
+        background-color:$colorBlueHover;
+    }
+    &:active{
+        transform: scale(0.97);
+    }
+}
+@mixin titleH2(){
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 44px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:$color141-b-41;
+}
+@mixin titleH3{
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+@mixin titleH3-600{
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 40px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+@mixin subtitle{
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:$color141-b-41;
+}
+@mixin subtitle2{
+    font-size: 22px;
+    font-weight: 300;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: center;
+}
+@mixin text{
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: left;
+    color:$colorGrey;
+}
+@mixin icon{
+    font-size: 36px;
+    color:$colorBlue;
+}
+.container{
+   position: relative;
+   max-width: 1500px; 
+   width: 100%;
+   min-width: 300px;
+   margin: 0 auto;
+   padding: 0 30px;
+//    background-color:#053efa;
+}
+@media screen and (max-width:1100px) {
+    .container{
+        max-width: 800px; 
+        padding: 0 20px;
+     }
+ }
+
+@import "blocks/burgerMenue";
+@import"blocks/header";
+@import"blocks/baner";
+@import"blocks/start.scss";
+@import"blocks/partners";
+@import"blocks/modal.scss";
+
+
+
+
+ 
+
