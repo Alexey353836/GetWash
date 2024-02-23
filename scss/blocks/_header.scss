@@ -5,7 +5,7 @@
     justify-content: space-between;
     align-items: center;
     z-index: 60;
-    background-color:#fff;
+    background-color:#ffffff;
     padding: 20px;
     border-radius:5px;
     margin: 0 auto;
@@ -28,6 +28,10 @@
     display: flex;
     align-items:center;
     justify-content: space-between;
+    gap: 0px 30px;
+}
+.nav__left-item{
+//    margin-right: 40px;
 }
 .nav__left-text {
     color: $colorGrey;
@@ -35,7 +39,7 @@
     font-weight: 400;
     line-height: 25.2px;
     transition: 0.2s;
-    margin-right: 40px;
+    // margin-right: 40px;
     &:hover{
         color:$color141-b-41Hover; 
     }
@@ -104,7 +108,7 @@
     transform: rotate(45deg) translate(0%, 70%);
 }
 
-@media screen and (max-width:1100px) {
+@media screen and (max-width:1300px) {
      .nav__left {
      display: none;
     }
