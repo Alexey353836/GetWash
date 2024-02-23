@@ -5,6 +5,12 @@ margin-top: 20px;
 .partners__title {
     @include titleH3();
 }
+.partners__subtitle-box-1{
+    display: block;
+}
+.partners__subtitle-box-2{
+    display: none;
+}
 .partners__subtitle {
     @include subtitle2();
 
@@ -31,7 +37,6 @@ margin-top: 20px;
     @include text();
     text-align: center;
     color:$color141-b-41;
-
     margin-top: 36px;
 }
 .partners__btn {
@@ -47,8 +52,13 @@ margin-top: 20px;
     }
 }
 @media screen and (max-width:600px){
+    .partners__subtitle-box-1{
+        display: none;
+    }
+    .partners__subtitle-box-2{
+        display: block;
+    }
      .partners__title {
-        @include titleH3-600(); 
-       
+        @include titleH3-320(); 
      }
 }
