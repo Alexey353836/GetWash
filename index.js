@@ -11,7 +11,6 @@ const scrollController = {
         scrollController.scrollPosition = window.scrollY;
         header.style.cssText = `
         padding-right: ${(window.innerWidth - document.body.offsetWidth)}px;
-        //   padding-right:35px;
         `;
         document.body.style.cssText = `
         overflow: hidden;
@@ -108,7 +107,6 @@ function bodyLock() {
     }
     body.style.paddingRight = lockPaddingValue;
     body.classList.add('lock');
-//    body.style.overflow = 'hidden';
 
     unlock = false;
     setTimeout(function() {
@@ -118,7 +116,6 @@ function bodyLock() {
 
 // Функция разблокировать попап
 function bodyUnlock() {
-    // const z = '0px'
     setTimeout(function () {
         if (lockPadding.length > 0) {
             for ( let index = 0; index < lockPadding.length; index++) {
@@ -128,7 +125,6 @@ function bodyUnlock() {
         }
        body.style.paddingRight = '0px';
          body.classList.remove('lock');
-        //  body.style.overflow = '';
     }, timeout);
 
     unlock = false;
