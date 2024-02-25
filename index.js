@@ -75,6 +75,8 @@ function popupOpen(curentPopup) {
             popupClose(popupActive, false);
         }else{
             bodyLock();
+            // Блокировать кнопку бургера
+            burger.removeEventListener('click', burgerOpenClose);
         }
     }
     curentPopup.classList.add('open');
@@ -91,6 +93,8 @@ function popupClose(popupActive, doUnlock = true) {
         popupActive.classList.remove('open');
         if (doUnlock) {
             bodyUnlock();
+               // Разбокировать кнопку бургера
+               burger.addEventListener('click', burgerOpenClose);
         }
     }
 }
@@ -387,7 +391,6 @@ class MenuPartnersCard{
 const btnModal = document.querySelectorAll('[data-btnModal]'),
     modal = document.querySelector('.modal'),
     modalDialog = document.querySelector('.modal__dialog');
-    // modalClose = document.querySelector('.modal__close');
     const dataClose = document.querySelectorAll('[data-close]');
 
 function openModal(){
@@ -396,6 +399,8 @@ function openModal(){
    modalDialog.classList.add('show');
    scrollController.disabledScroll();
 }
+
+
 
 // const modalTimerId = setTimeout(openModal, 100000);
 
