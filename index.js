@@ -1,35 +1,140 @@
 'use strict';
 
-
-
-
 //scroll
 // Фиксированный обьект
 const header = document.querySelector('.header');
 // Фиксированный обьект end
+
 const scrollController = {
    scrollPosition: 0,
-  disabledScroll() {
-      scrollController.scrollPosition = window.scrollY;
-      header.style.cssText = `
-    //   padding-right: ${(window.innerWidth - document.body.offsetWidth)}px;
-      padding-right:35px;
-    `;
-      document.body.style.cssText = `
-      overflow: hidden;
-      top:-${scrollController.scrollPosition}px;
-      left: 0;
-      padding-right: ${(window.innerWidth - document.body.offsetWidth)}px;
-      `;
-      document.documentElement.style.scrollBehavior = 'unset';
-  },
-  enabledScroll() {
-    window.scroll({top: scrollController.scrollPosition});
-    document.body.style.cssText = ``;
-    document.documentElement.style.scrollBehavior = '';
-    header.style.cssText = ` `;
-    document.body.style.cssText = ``;
+    disabledScroll() {
+        scrollController.scrollPosition = window.scrollY;
+        header.style.cssText = `
+        padding-right: ${(window.innerWidth - document.body.offsetWidth)}px;
+        //   padding-right:35px;
+        `;
+        document.body.style.cssText = `
+        overflow: hidden;
+        top:-${scrollController.scrollPosition}px;
+        left: 0;
+        padding-right: ${(window.innerWidth - document.body.offsetWidth)}px;
+        `;
+        document.documentElement.style.scrollBehavior = 'unset';
     },
+    enabledScroll() {
+        setTimeout(() => {
+            window.scroll({top: scrollController.scrollPosition});
+            document.body.style.cssText = ``;
+            document.documentElement.style.scrollBehavior = '';
+            header.style.cssText = ` `;
+            document.body.style.cssText = ``;
+        }, 800);
+    },
+}
+
+
+
+
+// Scroll 2 and Popups
+const popupLincks = document.querySelectorAll('.popup-linck');
+const body = document.querySelector('body');
+const lockPadding = document.querySelectorAll('.lock-padding');
+const timeout = 800;
+
+let unlock = true;
+
+// Событие открыть попап
+if (popupLincks.length > 0){
+    for (let index = 0; index < popupLincks.length; index++){
+        const popuplinck = popupLincks[index];
+        popuplinck.addEventListener('click', function(e) {
+            const popupName = popuplinck.getAttribute('href').replace('#', '');
+            const curentPopup = document.getElementById(popupName);
+            popupOpen(curentPopup);
+            e.preventDefault();
+        });
+    }
+}
+
+// Событие закрыть попап
+const popupCloseIcon = document.querySelectorAll('.close-popup');
+if (popupCloseIcon.length > 0) {
+    for (let index = 0; index < popupCloseIcon.length; index++) {
+        const el = popupCloseIcon[index];
+        el.addEventListener('click', function(e) {
+            popupClose(el.closest('.popup'));
+            e.preventDefault();
+        })
+    }
+}
+
+// Функция открыть попап
+function popupOpen(curentPopup) {
+    if (curentPopup && unlock) {
+        const popupActive = document.querySelector('.popup.open');
+        if (popupActive){
+            popupClose(popupActive, false);
+        }else{
+            bodyLock();
+        }
+    }
+    curentPopup.classList.add('open');
+    curentPopup.addEventListener('click', function(e){
+        if (!e.target.closest('.popup__content')){
+            popupClose(e.target.closest('.popup'));
+        }
+    });
+}
+
+// Функция закрыть попап
+function popupClose(popupActive, doUnlock = true) {
+    if (unlock) {
+        popupActive.classList.remove('open');
+        if (doUnlock) {
+            bodyUnlock();
+        }
+    }
+}
+
+// Функция блокировать попап
+function bodyLock() {
+    const lockPaddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px';
+    
+    if (lockPadding.length > 0) {
+        for (let index = 0; index < lockPadding.length; index++) {
+            const el = lockPadding[index];
+            el.style.paddingRight = lockPaddingValue;
+        }
+    }
+    body.style.paddingRight = lockPaddingValue;
+    body.classList.add('lock');
+//    body.style.overflow = 'hidden';
+
+    unlock = false;
+    setTimeout(function() {
+        unlock = true;
+    }, timeout);
+}
+
+// Функция разблокировать попап
+function bodyUnlock() {
+    // const z = '0px'
+    setTimeout(function () {
+        if (lockPadding.length > 0) {
+            for ( let index = 0; index < lockPadding.length; index++) {
+                const el = lockPadding[index];
+                el.style.paddingRight = '0px';
+            }
+        }
+       body.style.paddingRight = '0px';
+         body.classList.remove('lock');
+        //  body.style.overflow = '';
+    }, timeout);
+
+    unlock = false;
+    setTimeout(function () {
+        unlock = true;
+    }, timeout)
 }
 
 
@@ -157,17 +262,24 @@ class MenuConstructor{
 
 // start__box-2-item (карточки)
 class MenuStartsCard {
-    constructor(icon, title, text, parentSelector) {
+    constructor(icon, title, text, parentSelector, ...classes) {
         this.icon = icon;
         this.title = title;
         this.text = text;
+        this.classes = classes;
         this.parent = document.querySelector(parentSelector)
     }
 
     render() {
         const element = document.createElement('div');
+        if (this.classes.length === 0) {
+            this.element = 'start__box-2-item';
+            element.classList.add(this.element);
+        }else {
+            this.classes.forEach(className => {element.classList.add(className)});
+        }
+
         element.innerHTML = `
-        <div class="start__box-2-item">
             <i class="${this.icon} start__box-2-icon"></i>
             <div class="start__box-2-boxText">
                 <p class="start__box-2-title">
@@ -177,7 +289,6 @@ class MenuStartsCard {
                    ${this.text}
                 </p>
             </div>
-        </div>
         `;
         this.parent.append(element);
     }
@@ -188,7 +299,9 @@ class MenuStartsCard {
         'fa-solid fa-download',
         'Скачай и зарегистрируйся',
         'Наше приложение доступно в Apple Store и Google Play',
-        '.start__box-2-items'
+        '.start__box-2-items',
+        // 'start__box-2-item',
+        // 'start__red'
     ).render();
     new MenuStartsCard(
         'fa-solid fa-location-dot',
@@ -213,23 +326,29 @@ class MenuStartsCard {
 
 
 
-// Partners item (карьтчки)  
+// Partners item (карточки)  
 class MenuPartnersCard{
-    constructor(icon, text, parentSelector) {
+    constructor(icon, text, parentSelector, ...classes) {
         this.icon = icon;
         this.text = text;
+        this.classes = classes;
         this.parent = document.querySelector(parentSelector);
     }
 
     render() {
         const element = document.createElement('div');
+        if (this.classes.length === 0) {
+            this.element = 'partners__item';
+            element.classList.add(this.element);
+        }else {
+            this.classes.forEach(className => element.classList.add(className));
+        }
+
         element.innerHTML = `
-            <div class="partners__item">
                 <i class="${this.icon} partners__icons"></i>
                 <p class="partners__item-text">
                     ${this.text}
                 </p>
-            </div>
         `;
         this.parent.append(element);
     }
@@ -239,7 +358,9 @@ class MenuPartnersCard{
     new MenuPartnersCard(
         'fa-solid fa-book',
         ' Просмотривайте историю заказа',
-        '.partners .partners__items'
+        '.partners .partners__items',
+        // 'partners__item',
+        // 'partners__red'
     ).render();
     new MenuPartnersCard(
         'fa-regular fa-calendar-days',
@@ -259,7 +380,7 @@ class MenuPartnersCard{
     new MenuPartnersCard(
         'fa-solid fa-file-invoice-dollar',
         ' Бесконтактная оплата работы',
-        '.partners .partners__items'
+        '.partners .partners__items',
     ).render();
 }
 

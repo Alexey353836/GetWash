@@ -24,6 +24,9 @@
     display: flex;
    align-items:center;
 }
+.start__red{
+    background-color: rgba(255, 0, 0, 0.411);
+}
 .start__box-2-icon{
     @include icon();
 }

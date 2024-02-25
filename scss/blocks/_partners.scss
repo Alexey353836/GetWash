@@ -36,6 +36,9 @@ margin-top: 20px;
 .partners__icons {
     @include icon();
 }
+.partners__red{
+    background-color: rgba(255, 0, 0, 0.24);
+}
 .partners__item-text {
     @include text();
     text-align: center;
