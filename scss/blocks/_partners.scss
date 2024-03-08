@@ -18,10 +18,9 @@ margin-top: 20px;
     margin: 30px auto 0px;
 }
 .partners__items {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, 230px);
-    justify-content: space-between;
-    gap: 40px 30px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
     margin-top: 40px;
 }
 .partners__item {
@@ -30,7 +29,7 @@ margin-top: 20px;
     align-items:center;
     padding: 10px;
     margin-bottom: 10px;
-    // width: 230px;
+    width: 230px;
  
 }
 .partners__icons {
@@ -49,7 +48,6 @@ margin-top: 20px;
     display: flex;
     justify-content: center;
     margin-top: 30px;
-    margin-bottom: 200px;
 }
 @media screen and (max-width: 1400px){
     .partners__items {

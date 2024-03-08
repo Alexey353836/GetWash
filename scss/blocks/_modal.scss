@@ -14,6 +14,13 @@
     transition: 0.8s;
     overflow-y: auto;
 }
+.hide{
+        display: none;
+        
+ }
+// .show{
+//         display: block;
+//  }
 .modal.show{
     visibility: visible;
     opacity: 1;
@@ -27,7 +34,19 @@
     transform: translateY(-100%);
     transition: 0.8s;
 }
+.modal__dialog-2 {
+    width: 100%;
+    max-width: 600px;
+    height: max-content;
+    margin-top: 80px;
+    padding: 0 20px;
+    transform: translateY(-100%);
+    transition: 3s;
+}
 .modal__dialog.show{
+    transform: translateY(0%);
+}
+.modal__dialog-2.show{
     transform: translateY(0%);
 }
 .modal__content {
@@ -86,4 +105,59 @@
 }
 
 
+// // Modal-php
+// .modal {
+//     position: fixed;
+//     width: 100%;
+//     height: 100%;
+//     left: 0;
+//     top: 0;
+//     background-color: rgba(0, 0, 0, 0.631);
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+// }
+// .hide{
+//     display: none;
+// }
+// .show{
+//     display: block;
+// }
+// .modal__dialog {
+//     max-width: 800px;
+//    margin: 50px auto 0px;
+// }
+// .modal__content {
+//     position: relative;
+//     background-color:#fff;
+//     padding: 30px;
+// }
+// .modal__close {
+//     position: absolute;
+//     top:20px;
+//     right: 20px;
+//     font-size: 40px;
+//     cursor: pointer;
+// }
+// .modal__title {
+//     margin-top: 80px;
+//     font-size: 40px;
+//     text-align: center;
+// }
+// .modal__input {
+//     display: block;
+//     /* width: 250px; */
+//     height: 40px;
+//     margin-top: 30px;
+//     margin: 30px auto 0px;
+//     font-size: 20px;
+//     padding: 10px 10px;
+// }
+// .btn {
+//     font-size: 20px;
+//     padding: 10px 10px;
+//     margin: 40px auto 40px;
+//     display: block;
+//     cursor: pointer;
+// }
 

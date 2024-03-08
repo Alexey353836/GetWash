@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
 
     <title>GetWash</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="scss/style.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>   
@@ -55,12 +55,12 @@
                         Мы поможем сохранить ваше время для более интересных занятий, чем стоять в очереди.
                     </p>
                     <div class="baner__button">
-                        <button data-btnModal class="button">Связаться с нами</button>
+                        <button data-Modal class="button">Связаться с нами</button>
                     </div>
                 </div>
 
                 <div class="baner__box-2">
-                    <img src="img/photo/iPhone 12 Pro Mockup-1.png" alt="iPhone 12 Pro Mockup" class="baner__img">
+                    <img src="img/photo/baner-photo-1.png" alt="iPhone 12 Pro Mockup" class="baner__img">
                     <img src="img/photo/iPhone 12 mockup 3 1.png" alt="iPhone 12 Pro Mockup" class="baner__img-2">
                 </div>
 
@@ -187,6 +187,24 @@
             </div>
         </div>
 
+         <!-- links -->
+         <div class="container">
+            <section class="links">
+                <div class="links__box-1">
+                    <h2 class="links__title">Хватит тратить своё время в очередях</h2>  
+                    <p class="links__subtitle">Приложение скоро будет доступно для бета тестирования в AppStore и Google Play</p>
+                    <div class="links__box1-box">
+                        <img src="img/icons/link-1.png" alt="links" class="links__box-1-img">
+                        <img src="img/icons/link-2.png" alt="links" class="links__box-1-img">
+                    </div>
+                </div>
+                <div class="links__box-2">
+                    <img src="img/photo/link-photo-2.png" alt="linksImg" class="links__box-2-img-1">
+                    <img src="img/photo/link-photo-1.png" alt="linksImg" class="links__box-2-img-2">
+                </div>
+            </section>
+        </div>
+
          <!-- Burger  Menu-->
          <div class="container">
             <section class="burger-menu ">
@@ -261,7 +279,7 @@
                             </div>
                            
                             <div class="partners__menu-button">
-                                <button type="reset" class="button-1">Очистеть</button>
+                                <button type="reset" class="button-1">Очистить</button>
                                 <button type="submit" class="button-1">Получить доступ</button>
                             </div>
                         </form>
@@ -278,15 +296,15 @@
         </div>
 
         <!-- Modal -->
-        <div class="modal">
+        <div class="modal ">
             <div class="modal__dialog">
                 <div class="modal__content">
                     <form action="#">
-                        <div data-close class="modal__close">&times;</div>
+                        <div data-close class="modal__close hide">&times;</div>
                         <div class="modal__title">Мы свяжемся с вами как можно быстрее!</div>
                         <input required placeholder="Ваше имя" name="name" type="text" class="modal__input">
                         <input required placeholder="Ваш номер телефона" name="phone" type="phone" class="modal__input">
-                        <button type="button" class="btn btn_dark btn_min">Перезвонить мне</button>
+                        <button type="submit" class="btn btn_dark btn_min">Перезвонить мне</button>
                     </form>
                 </div>
             </div>
@@ -317,6 +335,7 @@
             </div>
         
         </div>
+
     </div>
 
     <script src="index.js"></script>

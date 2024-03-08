@@ -52,11 +52,15 @@
     position: absolute;
     top: 0;
     right: 0px;
-    transform: translateX(100px);
+    // transform: translateX(100px);
     background:url('../img/photo/Transaction\ History\ 10.png');
     background-repeat: no-repeat;
     background-size: contain;
     max-width: 1040px;
+}
+.baner__img{
+   margin-top: 70px;
+   max-width: 800px;
 }
 .baner__img-2{
     display: none;
